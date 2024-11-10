@@ -7,6 +7,7 @@ import Context from "./Context";
 
 import styles from "./App.module.scss";
 import { CraCheckReportProduct } from "plaid";
+import { StatisticsGrid } from "./Components/StatisticsGrid/StatisticsGrid";
 
 const App = () => {
   const { linkSuccess, isPaymentInitiation, itemId, dispatch } =
@@ -125,8 +126,32 @@ const App = () => {
         <Header />
         {linkSuccess && (
           <>
-            <Products />
-            {!isPaymentInitiation && itemId && <Items />}
+            <StatisticsGrid />
+            {/* <Products /> */}
+            <p>
+  The allocation of $153 or 153000 credit card points is based on a needs assessment that compares your financial profile—annual salary of $30,000, credit score of 570, monthly spending of $2,600, and outstanding debts of $10,000—to those of other individuals with varying financial situations.
+</p>
+
+<p>
+  1. <strong>Income:</strong> With an annual salary of $30,000, you fall into a lower income bracket, which typically correlates with a higher need for support. Individuals with higher salaries generally have greater disposable income, reducing their perceived financial strain.
+</p>
+
+<p>
+  2. <strong>Credit Score:</strong> A score of 570 is below the median, signaling financial instability or limited access to affordable credit. In comparison, applicants with higher scores often have better credit access and thus lower assessed need.
+</p>
+
+<p>
+  3. <strong>Monthly Spending:</strong> Spending $2,600 monthly represents a high proportion of your income, limiting savings potential. In contrast, those with similar spending but higher income experience less financial stress, as they can manage such expenses more comfortably.
+</p>
+
+<p>
+  4. <strong>Outstanding Debts:</strong> A debt burden of $10,000 places additional strain on your budget. Individuals with less debt or higher income have greater flexibility, making them less likely to require financial assistance.
+</p>
+
+<p>
+  Each of these metrics positions you in a higher percentile of financial need. In comparison, individuals with higher income, better credit scores, lower debt, or a lower income-to-spending ratio are seen as less financially vulnerable, resulting in lower allocations. Thus, the $153 amount reflects the system’s evaluation of your financial constraints relative to those in more stable situations.
+</p>
+            {/* {!isPaymentInitiation && itemId && <Items />} */}
           </>
         )}
       </div>

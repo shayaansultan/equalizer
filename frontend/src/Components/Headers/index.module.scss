@@ -1,5 +1,5 @@
 @import "~plaid-threads/scss/variables";
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Doto:wght@100..900&family=Inter:wght@600&family=Raleway&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 .grid {
   width: 100%;
   display: flex;
@@ -68,4 +68,33 @@
 .requests {
   margin-top: 7 * $unit;
   font-size: 2 * $unit;
+}
+
+.winnings {
+  font-size: 3rem;
+  font-weight: italic;
+  font-family: 'Tinos'; 
+  text-align: center;
+}
+
+.amount {
+  font-size: 10rem;
+  font-family: 'Tinos';
+  background: linear-gradient(270deg, #ff6ec4, #7873f5);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

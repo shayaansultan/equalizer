@@ -3,6 +3,15 @@ import React, { useContext } from "react";
 import Endpoint from "../Endpoint";
 import Context from "../../Context";
 import ProductTypesContainer from "./ProductTypesContainer";
+
+import {
+  transformItemData,
+  transformAccountsData,
+  itemCategories,
+  accountsCategories,
+  transformDataAnalyzed,
+  DataAnalyzed
+} from "../../dataUtilities";
 import {
   transactionsCategories,
   authCategories,
@@ -43,8 +52,22 @@ import {
 const Products = () => {
   const { products, isCraProductsExclusively } = useContext(Context);
   return (
-    <ProductTypesContainer productType="Products">
-      {products.includes("payment_initiation") && (
+    <ProductTypesContainer productType="Transactions">
+        {/* <Endpoint
+        endpoint="item"
+        categories={DataAnalyzed}
+        schema="/item/get/"
+        description="Retrieve information about an Item, like the institution,
+        billed products, available products, and webhook
+        information."
+        transformData={transformDataAnalyzed}
+      /> */}
+      <>Transactions goes here</>
+      {/* <Endpoint 
+        endpoint="Transactions"
+        name="Transactions"
+      ></Endpoint> */}
+      {/* {products.includes("payment_initiation") && (
         <Endpoint
           endpoint="payment"
           name="Payment"
@@ -224,11 +247,11 @@ const Products = () => {
           description="Retrieve cash flow insights from partners"
           transformData={transformPartnerInsightsData}
         />
-      )}
+      )} */}
     </ProductTypesContainer>
   );
 };
 
-Products.displayName = "Products";
+Products.displayName = "Transactions";
 
 export default Products;

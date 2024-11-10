@@ -7,6 +7,8 @@ import {
   transformAccountsData,
   itemCategories,
   accountsCategories,
+  transformDataAnalyzed,
+  DataAnalyzed
 } from "../../dataUtilities";
 
 const Items = () => (
@@ -14,12 +16,12 @@ const Items = () => (
     <ProductTypesContainer productType="Item Management">
       <Endpoint
         endpoint="item"
-        categories={itemCategories}
+        categories={DataAnalyzed}
         schema="/item/get/"
         description="Retrieve information about an Item, like the institution,
         billed products, available products, and webhook
         information."
-        transformData={transformItemData}
+        transformData={transformDataAnalyzed}
       />
       <Endpoint
         endpoint="accounts"

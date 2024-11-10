@@ -23,19 +23,17 @@ const Header = () => {
 
   return (
     <div className={styles.grid}>
-      <h3 className={styles.title}>Plaid Quickstart</h3>
+      {!linkSuccess && <h3 className={styles.title}>Equalizer</h3>}  
 
       {!linkSuccess ? (
         <>
           <h4 className={styles.subtitle}>
-            A sample end-to-end integration with Plaid
+            A wealth redistribution system
           </h4>
           <p className={styles.introPar}>
-            The Plaid flow begins when your user wants to connect their bank
-            account to your app. Simulate this by clicking the button below to
-            launch Link - the client-side component that your users will
-            interact with in order to link their accounts to Plaid and allow you
-            to access their accounts via the Plaid API.
+            Equalizer is a wealth redistribution system that aims change the financial imbalance caused by the credit card rewards system.
+            By using otherwise wasted credit card rewards, Equalizer proportionally distributes these points from the upper class to the lower class in need based on 
+            information such as expenses, income, debt, and loans.  
           </p>
           {/* message if backend is not running and there is no link token */}
           {!backend ? (
@@ -115,7 +113,7 @@ const Header = () => {
             </>
           ) : (
             /* If not using the payment_initiation product, show the item_id and access_token information */ <>
-              {isItemAccess ? (
+              {/* {isItemAccess ? (
                 <h4 className={styles.subtitle}>
                   Congrats! By linking an account, you have created an{" "}
                   <InlineLink
@@ -136,8 +134,8 @@ const Header = () => {
                     Unable to create an item. Please check your backend server
                   </Callout>
                 </h4>
-              )}
-              <div className={styles.itemAccessContainer}>
+              )} */}
+              {/* <div className={styles.itemAccessContainer}>
                 {itemId && (
                   <p className={styles.itemAccessRow}>
                     <span className={styles.idName}>item_id</span>
@@ -158,15 +156,19 @@ const Header = () => {
                     <span className={styles.tokenText}>{userToken}</span>
                   </p>
                 )}
-              </div>
-              {(isItemAccess || userToken) && (
+              </div> */}
+              {/* {(isItemAccess || userToken) && (
                 <p className={styles.requests}>
                   Now that you have {accessToken && "an access_token"}
                   {accessToken && userToken && " and "}
                   {userToken && "a user_token"}, you can make all of the
                   following requests:
                 </p>
-              )}
+              )} */}
+              
+              <p className={styles.winnings}>
+                You received the equivalent of <span className={styles.amount}>153</span> dollars!
+              </p>
             </>
           )}
         </>

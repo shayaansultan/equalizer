@@ -545,6 +545,25 @@ export const checkReportPartnerInsightsCategories: Array<Categories> = [
   }
 ];
 
+export const DataAnalyzed: Array<Categories> = [
+  {
+    title: "Current Debt",
+    field: "name",
+  },
+  {
+    title: "Yearly Salary",
+    field: "type",
+  },
+  {
+    title: "Monthly Spending",
+    field: "date",
+  },
+  {
+    title: "Credit Score",
+    field: "amount",
+  },
+];
+
 export const transformAuthData = (data: AuthGetResponse) => {
   return data.numbers.ach!.map((achNumbers) => {
     const account = data.accounts!.filter((a) => {
@@ -831,6 +850,17 @@ export const transformItemData = (data: ItemData): Array<DataItem> => {
       name: data.institution.name,
       billed: data.item.billed_products.join(", "),
       available: data.item.available_products.join(", "),
+    },
+  ];
+};
+
+export const transformDataAnalyzed = (data: ItemData): Array<DataItem> => {
+  return [
+    {
+      name: "test",
+      type: "123",
+      date: "01/2/3",
+      amount: 100,
     },
   ];
 };
